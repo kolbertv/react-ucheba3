@@ -20,7 +20,7 @@
 .content__item__summary {
     position: relative;
     min-height: 90px;
-    transition: all 0.3s;
+
 }
 
 .content__item__header {
@@ -41,8 +41,16 @@
     border-right: 40px solid #2A363B;
 }
 
-.content__item__readMore::before {
+.content__item__readMore_plus::before {
     content: "+";
+}
+
+.content__item__readMore_minus::before {
+    content: "-";
+}
+
+.content__item__readMore::before {
+    /*content: "+";*/
     display: inline-block;
     position: absolute;
     top: -29px;
