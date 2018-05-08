@@ -89,7 +89,12 @@ let conf = {
             }
         }),
         new CleanWebpackPlugin(['build']),
-
+        new CopyWebpackPlugin([
+            {
+                from: 'src/img',
+                to: 'img'
+            }
+        ]),
     ]
 };
 
