@@ -1,12 +1,17 @@
 import React from 'react';
 
+
 export default class Header extends React.Component {
     render() {
+
+        let my_category = this.props.category;
+        let modalWindowVisibleButton = this.props.modalWindowVisibleButton;
+
         return (
             <div className="header">
-                <Topline/>
+                <Topline  modalWindowVisibleButton={modalWindowVisibleButton}/>
                 {/*<HeaderLogo/>*/}
-                <Nav/>
+                <Nav category = {my_category} categoryChange={this.props.categoryChange}/>
             </div>
         )
     }
@@ -14,6 +19,9 @@ export default class Header extends React.Component {
 
 class Topline extends React.Component {
     render() {
+
+        let modalWindowVisibleButton = this.props.modalWindowVisibleButton;
+
         return (
             <div className="topline__container">
                 <ul className="icon__ul">
@@ -23,21 +31,31 @@ class Topline extends React.Component {
                     <li><a href="http://www.vk.com">VK</a></li>
                 </ul>
 
-                <button className="topline__button">login</button>
+                <button className="topline__button" onClick={modalWindowVisibleButton}>login</button>
             </div>
         )
     }
 }
 
 class Nav extends React.Component {
-    render() {
+
+     render() {
+
+        let categoryChange = this.props.categoryChange;
+
+        let my_category = this.props.category;
+
+        let myCategoryContainer = my_category.map(function (item, index) {
+            return (
+                <li key={index} value={index}><a href="#" onClick={()=>categoryChange(index)}>{item}</a></li>
+        )
+        });
+
+        // console.log(this.props);
         return (
             <div className="menu__container">
                 <ul className="menu__ul">
-                    <li><a href="#">жизнь</a></li>
-                    <li><a href="#">тачки</a></li>
-                    <li><a href="#">техника</a></li>
-                    <li><a href="#">наука</a></li>
+                    {myCategoryContainer}
                 </ul>
             </div>
         )
