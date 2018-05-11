@@ -11,6 +11,7 @@
     "popper.js": "^1.14.3",
     "react": "^16.3.2",
     "react-bootstrap": "^0.30.10",
+    "react-router": "^4.2.0",
     "react-dom": "^16.3.2"
   },
   "devDependencies": {
@@ -37,7 +38,7 @@
     "jshint": "^2.9.5",
     "jshint-loader": "^0.8.4",
     "node-sass": "^4.9.0",
-    "npm": "^6.0.0",
+    "npm": "^6.0.1",
     "path": "^0.12.7",
     "sass-loader": "^7.0.1",
     "script-loader": "^0.7.2",
